@@ -1,0 +1,3 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,polish
+AloeDrink,items,Item,,,Aloe drink,,Sok z aloesu
+AloeDrinkDesc,items,Item,,,Nothing hydrates like a full glass of aloe vera juice,,Nic tak nie nawadnia jak pełna szklanka soku z aloesu
