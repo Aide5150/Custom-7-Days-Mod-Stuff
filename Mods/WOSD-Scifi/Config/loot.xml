@@ -1,0 +1,38 @@
+<configs>
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.E.R.P.A. Weapon Lootgroups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<append xpath="/lootcontainers/lootgroup[@name='weaponParts']">
+	<item name="DRPAWeaponsParts" count="2,6"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupWeapons_MeleeParts']">
+	<item name="DRPAWeaponsParts" count="3,7"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupStunBaton']">
+	<item name="DRPAWeaponsParts" loot_prob_template="med"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+	<item name="DRPAgladius"/>
+	<item name="DRPAspear"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+	<item name="DRPAaxe"/>
+	<item name="DRPAkatana"/>
+	<item name="DRPAclaymore"/>
+	<item name="DRPAmorningstar"/>
+	<item name="DRPAsledgehammer"/>
+</append>
+
+</configs>
+
+
+
+
+

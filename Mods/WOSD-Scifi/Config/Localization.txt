@@ -1,0 +1,19 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+DRPAWeaponsParts,items,Melee,,,D.R.P.A. Weapons Parts,
+DRPAWeaponsPartsDesc,items,Melee,,,Created with hopes to conquer foreign worlds the D.R.P.A. parts will help the average Joe in their quest to stand tall against the greatest of foes.,
+
+DRPAaxe,items,Melee,,,D.R.P.A. Axe,
+DRPAaxeDesc,items,Melee,,,This shockingly good Axe will slice dice and shock your enemy into submission.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,
+DRPAsledgehammer,items,Melee,,,D.R.P.A. Sledgehammer,
+DRPAsledgehammerDesc,items,Melee,,,This sledge can stun and knock back any zombies unlucky enough to survive the first hit.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,
+DRPAmorningstar,items,Melee,,,D.R.P.A. Morningstar,
+DRPAmorningstarDesc,items,Melee,,,This brain bashing stunner will make the undead think twice about crossing paths with you.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,
+DRPAgladius,items,Melee,,,D.R.P.A. Gladius,
+DRPAgladiusDesc,items,Melee,,,This spartan weapon of choice has been upgraded with 50k volts of uncontrollable muscle twitch.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,
+DRPAkatana,items,Melee,,,D.R.P.A. Katana,
+DRPAkatanaDesc,items,Melee,,,If you find yourself weebing out in the apocalyse; look no further as thise Katana has a sting like no other.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,
+DRPAclaymore,items,Melee,,,D.R.P.A. Claymore,
+DRPAclaymoreDesc,items,Melee,,,If the space zombies can't hear your cry for freedom they sure will feel it with this beast of a weapon.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,
+DRPAspear,items,Melee,,,D.R.P.A. Spear,
+DRPAspearDesc,items,Melee,,,This space age spear can poke at a distance or be thrown for a long distance shock.\nIncrease damage with Electrocutioner.\nIncrease attack speed with Calculated Attack.\nRepair with a Repair Kit.\nScrap to D.R.P.A. parts.,

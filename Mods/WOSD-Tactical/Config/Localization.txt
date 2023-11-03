@@ -1,0 +1,14 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+TacticalAxe,items,Melee,,,Tactical Axe,
+TacticalAxeDesc,items,Melee,,,Chopping down trees and enemies never felt better in the dark than with this axe with it's composite grip and all black paint.\nIncrease damage with Miner 69er.\nIncrease attack speed with Big & Fast.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+TacticalKnife,items,Melee,,,Tactical Knife,
+TacticalKnifeDesc,items,Melee,,,Taking down a bear or buck couldn't go much smoother than with this deadly fixed blade.\nIncrease damage with Deep Cuts.\nIncrease attack speed with Whirl Wind.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+TacticalMachete,items,Melee,,,Tactical Machete,
+TacticalMacheteDesc,items,Melee,,,The tacticle machete is slightly faster and sharper than the run-of-the-mill machete.\nIncrease damage with Deep Cuts.\nIncrease attack speed with Whirl Wind.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+TacticalSword,items,Melee,,,Tactical Sword,
+TacticalSwordDesc,items,Melee,,,Never underestimate the sword of truth...Just kidding it's just a cool tactical sword of awesomeness.\nIncrease damage with Deep Cuts.\nIncrease attack speed with Whirl Wind.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+TacticalHatchet,items,Melee,,,Tactical Hatchet,
+TacticalHatchetDesc,items,Melee,,,Campfires aren't the same without a tactical machete to widdle some kindling to perfection.\nIncrease damage with Deep Cuts.\nIncrease attack speed with Whirl Wind.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+TacticalKatana,items,Melee,,,Tactical Katana,
+TacticalKatanaDesc,items,Melee,,,This may not be Michone's style but some might prefer the minimalist aesthetic of this tactical katana.\nIncrease damage with Deep Cuts.\nIncrease attack speed with Whirl Wind.\nRepair with a Repair Kit.\nScrap to scrap iron.,

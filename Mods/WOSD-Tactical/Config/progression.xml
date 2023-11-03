@@ -1,0 +1,46 @@
+<configs>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Tactical Axes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']">
+			<display_entry item="TacticalHatchet"  unlock_level="11,20,29,38,47,56" />
+			<display_entry item="TacticalAxe"  unlock_level="11,20,29,38,47,56" />
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="11,100" value="1" tags="TacticalHatchet"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="11,100" value="1" tags="TacticalAxe"/>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="20,29,38,47,56,100" value="1,2,3,4,5,5" tags="TacticalHatchet"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="20,29,38,47,56,100" value="1,2,3,4,5,5" tags="TacticalAxe"/>
+</append>
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Tactical Blades
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']">
+			<display_entry unlock_level="20,29,38,47,56,65" item="TacticalKnife"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="TacticalMachete"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="TacticalKatana"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="TacticalSword"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,75" value="1" tags="TacticalKnife"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,75" value="1" tags="TacticalMachete"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,75" value="1" tags="TacticalKatana"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,75" value="1" tags="TacticalSword"/>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,75" value="1,2,3,4,5,5" tags="TacticalKnife"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,75" value="1,2,3,4,5,5" tags="TacticalMachete"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,75" value="1,2,3,4,5,5" tags="TacticalKatana"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,75" value="1,2,3,4,5,5" tags="TacticalSword"/>
+
+</append>
+
+</configs>

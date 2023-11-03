@@ -1,0 +1,38 @@
+<configs>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.R.P.A. Weapons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']">
+			<display_entry unlock_level="20,29,38,47,56,65" item="DRPAmorningstar"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="DRPAsledgehammer"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="DRPAgladius"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="DRPAkatana"/>
+			<display_entry unlock_level="20,29,38,47,56,65" item="DRPAclaymore"/>
+			<display_entry unlock_level="11,20,29,38,47,56" item="DRPAspear"/>
+			<display_entry unlock_level="11,20,29,38,47,56" item="DRPAaxe"/>
+
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,100" value="1" tags="DRPAmorningstar"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,100" value="1" tags="DRPAsledgehammer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,100" value="1" tags="DRPAgladius"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,100" value="1" tags="DRPAkatana"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,100" value="1" tags="DRPAclaymore"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="11,100" value="1" tags="DRPAspear"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="11,100" value="1" tags="DRPAaxe"/>
+
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,100" value="1,2,3,4,5,5" tags="DRPAmorningstar"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,100" value="1,2,3,4,5,5" tags="DRPAsledgehammer"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,100" value="1,2,3,4,5,5" tags="DRPAgladius"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,100" value="1,2,3,4,5,5" tags="DRPAkatana"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,100" value="1,2,3,4,5,5" tags="DRPAclaymore"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="20,29,38,47,56,100" value="1,2,3,4,5,5" tags="DRPAspear"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="20,29,38,47,56,100" value="1,2,3,4,5,5" tags="DRPAaxe"/>
+
+</append>
+
+</configs>

@@ -1,0 +1,1621 @@
+<configs>
+
+<append xpath="/items">
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									DRPA Weapons Parts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<item name="DRPAWeaponsParts">
+	<property name="Extends" value="gunMGT1AK47Parts"/>
+	<property name="Material" value="mDRPAWeaponsParts"/>
+	<property name="CustomIcon" value="gunBotRoboticsParts"/>
+	<property name="CustomIconTint" value="5DD1FF"/>
+</item>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									DRPA Hammers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<item name="DRPAsledgehammer"> <!-- T3 -->
+	<property name="Tags" value="blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkElectrocutioner,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill"/>
+	<property name="DisplayType" value="meleeHeavy"/>
+	<property name="HoldType" value="33"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_warhammer"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="8"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="sledge_swinglight"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".515"/>
+		<property name="GrazeEnd" value=".52"/>
+		<property name="SwingDegrees" value="65"/>
+		<property name="SwingAngle" value="160"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="sledge_swingheavy"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".515"/>
+		<property name="GrazeEnd" value=".52"/>
+		<property name="SwingDegrees" value="110"/>
+		<property name="SwingAngle" value="90"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="DRPAsledgehammer">
+		<passive_effect name="EntityDamage" operation="base_set" value="45" tags="perkSkullCrusher"/> <!-- meleeWpnSledgeT3SteelSledgehammer -->
+		<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkSkullCrusher"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="42" tags="perkSkullCrusher,perkFlurryOfStrength"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="35" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkSkullCrusher"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.9" tags="perkSkullCrusher"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="perkSkullCrusher,primary"/>
+		
+		<passive_effect name="BlockDamage" operation="base_add" value="1000" tags="door,wood"/>
+		<display_value name="dDamageDoor" value="1000"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkSkullCrusher,perkElectrocutioner"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSkullCrusher"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkSkullCrusher,perkElectrocutioner"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSkullCrusher"/> <!-- tier bonus -->
+
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="62" tags="secondary"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".3" tags="secondary"/>
+	</effect_group>
+	
+	<effect_group name="apply damage buff, meleeWpnSledgeT3SteelSledgehammer">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+</item>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									DRPA Maces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<item name="DRPAmorningstar"> <!-- T3 -->
+	<property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkElectrocutioner,perkPummelPete,canHaveCosmetic,clubSkill"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_mace"/>
+	<property name="HoldType" value="2"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="4"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sound_start" value="batwood_swinglight"/>
+		<property name="Sphere" value=".1"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".32"/>
+		<property name="SwingDegrees" value="65"/>
+		<property name="SwingAngle" value="120"/>
+	<property class="HitSounds">
+		<property name="Override0" value="organic" param1="metalhitorganic"/>
+	</property>
+	<property class="GrazeSounds">
+		<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+	</property>
+	</property>
+
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sound_start" value="batwood_swingheavy"/>
+		<property name="Sphere" value=".15"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="IsHorizontalSwing" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".32"/>
+		<property name="SwingDegrees" value="120"/>
+		<property name="SwingAngle" value="90"/>
+	<property class="HitSounds">
+		<property name="Override0" value="organic" param1="woodhitorganic"/>
+	</property>
+	<property class="GrazeSounds">
+		<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+	</property>
+			</property>
+
+	<effect_group name="DRPAmorningstar">
+		<passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkPummelPete"/> <!-- meleeWpnClubT3SteelClub -->
+		<passive_effect name="BlockDamage" operation="base_set" value="15" tags="perkPummelPete"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52" tags="perkPummelPete,perkFlurryOfStrength"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="19" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkPummelPete"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkPummelPete,perkElectrocutioner"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkPummelPete,perkElectrocutioner"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="33" tags="secondary"/>
+	</effect_group>
+	
+	<effect_group name="apply damage buff, meleeWpnClubT3SteelClub">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+</item>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									DRPA Axes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<item name="DRPAaxe"> <!-- T3 -->
+	<property name="Tags" value="axe,melee,grunting,medium,tool,longShaft,attStrength,perkMiner69r,perkElectrocutioner,perkMotherLode,canHaveCosmetic,harvestingSkill,corpseRemoval"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="HoldType" value="17"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_axe"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="7"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="ShowQuality" value="true"/>
+	
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/>
+		<property name="Sound_start" value="axe_swinglight"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="GrazeStart" value=".4"/>
+		<property name="GrazeEnd" value=".5"/>
+		<property name="SwingDegrees" value="50"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="SwingAngle" value="180"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/>
+		<property name="Sound_start" value="axe_swingheavy"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+		<property name="GrazeStart" value=".4"/>
+		<property name="GrazeEnd" value=".5"/>
+		<property name="SwingDegrees" value="50"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="SwingAngle" value="135"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="DRPAaxe">
+		<passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkMiner69r"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkMiner69r"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkMiner69r,axe"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="28" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkMiner69r,perkElectrocutioner"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r,perkElectrocutioner"/> <!-- tier bonus -->
+		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
+		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
+		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r,axe"/> <!-- random APM -->
+		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
+
+		<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="49" tags="secondary"/>
+	</effect_group>
+	
+	<effect_group name="apply damage buff, meleeToolAxeT2SteelAxe">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+</item>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									DRPA Swords
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<item name="DRPAgladius">
+	<property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkElectrocutioner,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval"/>
+	<property name="DisplayType" value="meleeKnife"/>
+	<property name="HoldType" value="47"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_shortsword"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="6"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="EconomicValue" value="1200"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="machete_swinglight"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+			<!-- This triggers the use of the special corpse harvesting animation if there is a matching harvest event.
+			Also, param1  is the damage multiplier for corpse harvesting. -->
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".28"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="80"/>
+		<property name="SwingAngle" value="130"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="machete_swingheavy"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="IsHorizontalSwing" value="true"/>
+		<property name="GrazeStart" value=".3"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="-80"/>
+		<property name="SwingAngle" value="-60"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="DRPAgladius">
+		<passive_effect name="EntityDamage" operation="base_set" value="29" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
+		<passive_effect name="BlockDamage" operation="base_set" value="17" tags="perkDeepCuts"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkDeepCuts,perkFlurryOfAgility"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkDeepCuts"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDeepCuts,perkElectrocutioner"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeepCuts,perkElectrocutioner"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+		<!--<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="blockButcher"/>-->
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="30" tags="secondary"/>
+	</effect_group>
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+			<display_value name="dEntityDamageSneak" value="4"/>
+	</effect_group>
+			
+	<effect_group name="apply damage buff, meleeWpnBladeT3Machete">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+</item>
+
+<item name="DRPAkatana"> <!-- T1 -->
+	<property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkElectrocutioner,perkTheHuntsman,canHaveCosmetic"/>
+	<property name="DisplayType" value="meleeKnife"/>
+	<property name="HoldType" value="47"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_katana"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="6"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="machete_swinglight"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+			<!-- This triggers the use of the special corpse harvesting animation if there is a matching harvest event.
+			Also, param1  is the damage multiplier for corpse harvesting. -->
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".28"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="80"/>
+		<property name="SwingAngle" value="130"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="machete_swingheavy"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="IsHorizontalSwing" value="true"/>
+		<property name="GrazeStart" value=".3"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="-80"/>
+		<property name="SwingAngle" value="-60"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="DRPAkatana">
+		<passive_effect name="EntityDamage" operation="base_set" value="37" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
+		<passive_effect name="BlockDamage" operation="base_set" value="18" tags="perkDeepCuts"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="53" tags="perkDeepCuts,perkFlurryOfAgility"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="25" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.9" tags="perkDeepCuts"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDeepCuts,perkElectrocutioner"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeepCuts,perkElectrocutioner"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+		<!--<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="blockButcher"/>-->
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="38" tags="secondary"/>
+	</effect_group>
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+			<display_value name="dEntityDamageSneak" value="4"/>
+	</effect_group>
+	
+	<effect_group name="apply damage buff, meleeWpnBladeT3Machete">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+</item>
+
+<item name="DRPAclaymore"> <!-- T3 -->
+	<property name="Tags" value="machete,melee,grunting,medium,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attAgility,perkDeepCuts,perkElectrocutioner,perkTheHuntsman,canHaveCosmetic"/>
+	<property name="DisplayType" value="meleeKnife"/>
+	<property name="HoldType" value="33"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_greatsword"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="7"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="machete_swinglight"/>
+		<property name="ToolCategory.Butcher" value="0" param1="5"/>
+			<!-- This triggers the use of the special corpse harvesting animation if there is a matching harvest event.
+			Also, param1  is the damage multiplier for corpse harvesting. -->
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".28"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="80"/>
+		<property name="SwingAngle" value="130"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="machete_swingheavy"/>
+		<property name="ToolCategory.Butcher" value="0" param1="5.1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="IsHorizontalSwing" value="true"/>
+		<property name="GrazeStart" value=".3"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="-80"/>
+		<property name="SwingAngle" value="-60"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="DRPAclaymore">
+		<passive_effect name="EntityDamage" operation="base_set" value="56" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
+		<passive_effect name="BlockDamage" operation="base_set" value="25" tags="perkDeepCuts"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="46" tags="perkDeepCuts,perkFlurryOfStrength"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3" tags="perkDeepCuts"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDeepCuts,perkElectrocutioner"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeepCuts,perkElectrocutioner"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+		<!--<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="blockButcher"/>-->
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="35" tags="secondary"/>
+	</effect_group>
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+			<display_value name="dEntityDamageSneak" value="4"/>			
+	</effect_group>	
+	
+	<effect_group name="apply damage buff, meleeWpnBladeT3Machete">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+</item>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									DRPA Spears
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<item name="DRPAspear"> <!-- T2 -->
+	<property name="Tags" value="melee,grunting,medium,weapon,meleeWeapon,longShaft,attPerception,perkJavelinMaster,perkElectrocutioner,canHaveCosmetic,perkFlurryOfPerception,thrownWeapon,spearSkill"/>
+	<property name="DisplayType" value="meleeSpear"/>
+	<property name="HoldType" value="59"/>
+	<property name="Meshfile" value="#@modfolder:Resources/WOSD-scifi.unity3d?scifi_spear"/>
+	<property name="Material" value="mDRPAWeaponsParts"/> <property name="Weight" value="5"/>
+	<property name="StickyMaterial" value="#Other/Items?Weapons/Melee/Spear/Materials/spearIron_sticky.mat"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="EconomicValue" value="1200"/>
+	<property name="UnlockedBy" value="craftingRobotics"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value=".7"/>
+	<property name="StickyColliderUp" value="1"/>
+	<property name="StickyColliderRadius" value=".1"/>
+	<property name="StickyColliderLength" value="2"/>
+	<property name="StickyForwardDirection" value="0,0,1"/>
+	<property name="ShowQuality" value="true"/>	
+	<property name="Group" value="Ammo/Weapons,Melee Weapons,Ranged Weapons"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="NavObject" value="spear"/>
+	
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Hitmask_override" value="Melee"/>
+		<property name="Sphere" value=".15"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="spear_fire"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".32"/>
+		<property name="SwingDegrees" value="10"/>
+		<property name="SwingAngle" value="20"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+
+	<property class="Action1">
+		<requirement name="StatCompareCurrent" stat="Stamina" operation="GTE" value="20"/>
+		<property name="Class" value="ThrownWeapon"/>
+		<property name="Hitmask_override" value="Bullet"/>
+		<property name="Delay" value="1.2"/>
+		<property name="Throw_strength_default" value="10"/>
+		<property name="Throw_strength_max" value="25"/>
+		<property name="Max_strain_time" value="1"/>
+		<property name="Sound_start" value="spear_throw"/>
+		<property name="Explosion.ParticleIndex" value="0"/> <!-- no expl. -->
+		<property name="FlyTime" value="0"/>
+		<property name="Gravity" value="-6"/> <!-- default is -9.81 -->
+		<property name="LifeTime" value="60"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+	</property>
+
+	<effect_group name="meleeWpnBatonT2StunBaton">
+		<passive_effect name="EntityDamage" operation="base_set" value="21" tags="perkElectrocutioner"/> <!-- meleeWpnBatonT2StunBaton -->
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.5" tags="perkJavelinMaster"/><display_value name="dTargetArmor" value="-.5"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="6" tags="perkElectrocutioner"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="60" tags="perkElectrocutioner,perkFlurryOfPerception"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="21" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="150,1000" tier="1,6" tags="perkJavelinMaster"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.2" tags="perkJavelinMaster"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkJavelinMaster"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,2,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkElectrocutioner,perkJavelinMaster"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkElectrocutioner"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkElectrocutioner,perkJavelinMaster"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkElectrocutioner"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+
+		<!--<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Sparks"/> -->
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+	</effect_group>
+		<effect_group name="Throw">
+		<passive_effect name="EntityDamage" operation="perc_add" value="2.85" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="2.85" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="37" tags="secondary"/>
+	</effect_group>
+
+	<effect_group name="apply damage buff, meleeWpnBatonT2StunBaton">
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="ItemModEffects/baton_electricityPrefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+				<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" target_tags="zombie,animal" duration="2.5" force="350">
+				<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<!-- Set duration -->
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="6">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="7">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="8">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="9">
+				<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/></triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.1" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+	</effect_group>
+	
+<!--
+needed?
+			<requirement name="ItemHasTags" tags="perkElectrocutioner"/>
+
+			<requirement name="EntityTagCompare" target="other" tags="human,zombie,animal"/>
+-->
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="1">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<!--<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>-->
+	</effect_group>
+
+</item>
+
+</append>
+
+</configs>

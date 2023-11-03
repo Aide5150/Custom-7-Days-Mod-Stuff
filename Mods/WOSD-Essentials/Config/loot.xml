@@ -1,0 +1,18 @@
+<configs>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									WOSD - Essentials Loot 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<append xpath="/lootcontainers/lootgroup[@name='groupToolsT1']">
+	<item name="meleeToolSalvageT1Crowbar"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+	<item name="Katana"/>
+	<item name="Spear" />
+</append>
+
+</configs>

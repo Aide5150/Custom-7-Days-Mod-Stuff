@@ -1,0 +1,156 @@
+<configs>
+
+<append xpath="/recipes">
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Hammers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="WarHammer" count="1" craft_area="workbench" tags="learnable, perkSkullCrusher">
+	<ingredient name="resourceForgedIron" count="25"/>
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceWood" count="15"/>
+	<ingredient name="resourceGlue" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedIron,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="BattleMaul" count="1" craft_area="workbench" tags="learnable, perkSkullCrusher">
+	<ingredient name="resourceForgedSteel" count="35"/>
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceWood" count="40"/>
+	<ingredient name="resourceGlue" count="5"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="GateCrasher" count="1" craft_area="workbench" tags="learnable, perkSkullCrusher">
+	<ingredient name="resourceForgedSteel" count="65"/>
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceWood" count="20"/>
+	<ingredient name="resourceGlue" count="5"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Maces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="Mace" count="1" craft_area="workbench" tags="learnable, perkPummelPete">
+	<ingredient name="resourceForgedIron" count="20"/>
+	<ingredient name="resourceLeather" count="4"/>
+	<ingredient name="resourceWood" count="20"/>
+	<ingredient name="resourceGlue" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedIron,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="WarMace" count="1" craft_area="workbench" tags="learnable, perkPummelPete">
+	<ingredient name="resourceForgedSteel" count="38"/>
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceWood" count="10"/>
+	<ingredient name="resourceGlue" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="CrownSplitter" count="1" craft_area="workbench" tags="learnable, perkPummelPete">
+	<ingredient name="resourceForgedSteel" count="68"/>
+	<ingredient name="resourceLeather" count="6"/>
+	<ingredient name="resourceScrapBrass" count="60"/>
+	<ingredient name="resourceGlue" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Axes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="Hatchet" count="1" craft_area="workbench" tags="learnable, perkMiner69r">
+	<ingredient name="resourceForgedIron" count="12"/>
+	<ingredient name="resourceWood" count="8"/>
+	<ingredient name="resourceGlue" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedIron,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="Dane" count="1" craft_area="workbench" tags="learnable, perkMiner69r">
+	<ingredient name="resourceForgedIron" count="28"/>
+	<ingredient name="resourceWood" count="20"/>
+	<ingredient name="resourceLeather" count="8"/>
+	<ingredient name="resourceGlue" count="4"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedIron,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="BattleAxe" count="1" craft_area="workbench" tags="learnable, perkMiner69r">
+	<ingredient name="resourceForgedSteel" count="40"/>
+	<ingredient name="resourceWood" count="20"/>
+	<ingredient name="resourceLeather" count="8"/>
+	<ingredient name="resourceGlue" count="4"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceMechanicalParts,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Swords
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="Claymore" count="1" craft_area="workbench" tags="learnable, perkDeepCuts">
+	<ingredient name="resourceForgedSteel" count="55"/>
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceWood" count="10"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Spears
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="MedievilSpear" count="1" craft_area="workbench" tags="learnable, perkJavelinMaster">
+	<ingredient name="resourceForgedSteel" count="20"/>
+	<ingredient name="resourceWood" count="20"/>
+	<ingredient name="resourceLeather" count="5"/>
+	<ingredient name="resourceGlue" count="4"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+<recipe name="Halberd" count="1" craft_area="workbench" tags="learnable, perkJavelinMaster">
+	<ingredient name="resourceForgedSteel" count="45"/>
+	<ingredient name="resourceWood" count="40"/>
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceGlue" count="6"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+</append>
+
+</configs>

@@ -1,0 +1,116 @@
+<configs>
+
+<append xpath="/recipes">
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.R.P.A. Weapons Parts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="DRPAWeaponsParts" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.R.P.A. Axe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="DRPAaxe" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="7"/>
+	<ingredient name="resourceForgedSteel" count="8"/>
+	<ingredient name="resourceScrapPolymers" count="6"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.R.P.A. Blunt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="DRPAmorningstar" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="4"/>
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="2"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+<recipe name="DRPAsledgehammer" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="8"/>
+	<ingredient name="resourceForgedSteel" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="6"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.R.P.A. Blades
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="DRPAgladius" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="6"/>
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="2"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+<recipe name="DRPAkatana" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="6"/>
+	<ingredient name="resourceForgedSteel" count="6"/>
+	<ingredient name="resourceScrapPolymers" count="2"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+<recipe name="DRPAclaymore" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="7"/>
+	<ingredient name="resourceForgedSteel" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="3"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									D.R.P.A. Spear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="DRPAspear" count="1" craft_area="workbench" tags="learnable, perkElectrocutioner">
+	<ingredient name="DRPAWeaponsParts" count="5"/>
+	<ingredient name="resourceForgedSteel" count="6"/>
+	<ingredient name="resourceScrapPolymers" count="6"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceElectricParts" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="DRPAWeaponsParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape,resourceElectricParts"/>
+	</effect_group>
+</recipe>
+
+</append>
+
+</configs>

@@ -1,0 +1,8 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+meleeToolSalvageT1Crowbar,items,Tool,,,Crowbar,
+meleeToolSalvageT1CrowbarDesc,items,Tool,,,The crowbar is good for busting heads doors and safes quicker than a pickaxe.\nIncrease damage with Pummel Pete.\nIncrease attack speed with Big & Fast.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+Katana,items,Melee,,,Katana,
+KatanaDesc,items,Melee,,,Found in seedy Pawn Shops or a weebs dungeon; This Katana slices and dices fruit like nobodies bussiness.\nIncrease damage with Deep Cuts.\nIncrease attack speed with Whirl Wind.\nRepair with a Repair Kit.\nScrap to scrap iron.,
+Spear,items,Melee,,,Spear,
+SpearDesc,items,Melee,,,Pointy sticks have helped humanity throughout the ages. This Spear can poke a zombies eyes out or be thrown.\nIncrease damage with Spear Master.\nIncrease attack speed with Quick & Perceptive.\nRepair with a Repair Kit.\nScrap to scrap iron.,

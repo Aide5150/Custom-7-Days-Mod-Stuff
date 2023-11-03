@@ -1,0 +1,51 @@
+<configs>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Crowbar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']">
+			<display_entry item="meleeToolSalvageT1Crowbar"  unlock_level="11,20,29,38,47,56" />
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="11,75" value="1" tags="meleeToolSalvageT1Crowbar"/>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="20,29,38,47,56,75" value="1,2,3,4,5,5" tags="meleeToolSalvageT1Crowbar"/>
+</append>
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Katana
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']">
+			<display_entry unlock_level="20,29,38,47,56,65" item="Katana"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,75" value="1" tags="Katana"/>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,75" value="1,2,3,4,5,5" tags="Katana"/>
+
+</append>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Spear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']">
+			<display_entry unlock_level="20,29,38,47,56,65" item="Spear"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set"  level="20,75" value="1" tags="Spear"/>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="29,38,47,56,65,75" value="1,2,3,4,5,5" tags="Spear"/>
+
+</append>
+
+</configs>

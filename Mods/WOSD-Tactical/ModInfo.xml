@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xml>
+			<Name value="WOSD-Tactical"/>
+			<DisplayName value="Weapons of Some Destruction - Tactical" />
+			<Description value="The Tactical pack includes a bunch of weapons that are faster and deadlier than the typical weapons found around town."/>
+			<Author value="josefpatch"/>
+			<Version value="0.75"/>
+			<Website value=""/>
+	</xml>

@@ -1,0 +1,55 @@
+<configs>
+
+<append xpath="/recipes">
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<recipe name="meleeToolSalvageT1Crowbar" count="1" craft_area="workbench" tags="learnable,perkSalvageOperations">
+	<ingredient name="resourceForgedSteel" count="15"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceDuctTape"/>
+	</effect_group>
+</recipe>
+
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Swords
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<recipe name="Katana" count="1" craft_area="workbench" craft_time="120" tags="learnable,perkDeepCuts,craftingBlades">
+	<ingredient name="resourceForgedSteel" count="40"/>
+	<ingredient name="resourceCloth" count="10"/>
+	<ingredient name="resourceGlue" count="1"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="resourceForgedSteel,resourceCloth,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Spears
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+
+
+<recipe name="Spear" count="1" craft_area="workbench" tags="learnable,perkJavelinMaster,craftingSpears">
+	<ingredient name="resourceForgedSteel" count="20"/>
+	<ingredient name="resourceWood" count="55"/>
+	<ingredient name="resourceLeather" count="5"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedSteel,resourceLeather,resourceWood,resourceGlue"/>
+	</effect_group>
+</recipe>
+
+
+</append>
+</configs>

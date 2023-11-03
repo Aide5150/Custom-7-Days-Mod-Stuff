@@ -1,0 +1,21 @@
+<configs>
+
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Tactical Weapon Lootgroups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="TacticalHatchet" />
+		<item name="TacticalKnife" />
+		<item name="TacticalMachete" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="TacticalAxe" />
+		<item name="TacticalKatana" />
+		<item name="TacticalSword" />
+</append>
+
+</configs>
