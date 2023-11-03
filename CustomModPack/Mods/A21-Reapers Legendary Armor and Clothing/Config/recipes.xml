@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+
+	<append xpath="/recipes">
+
+		<!-- Lucky Shades -->
+		<recipe name="NodapparelConvenientGlassesPerception" count="1">
+			<ingredient name="apparelShades" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+		</recipe>
+
+		<!-- Lucky Tough Guy Sunglasses -->
+		<recipe name="NodapparelConvenientGlassesFortitude" count="1">
+			<ingredient name="apparelToughGuySunglasses" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+		</recipe>
+
+		<!-- Lucky Ski Googles -->
+		<recipe name="NodapparelConvenientGlassesAgility" count="1">
+			<ingredient name="apparelSkiGoggles" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+		</recipe>
+
+		<!-- Lucky Nerdy Glasses -->
+		<recipe name="NodapparelConvenientGlassesIntellect" count="1">
+			<ingredient name="apparelNerdGlasses" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+		</recipe>
+
+
+		<!-- Lucky Nightvision Googles -->
+		<recipe name="NodapparelConvenientGlassesNightvision" count="1">
+			<ingredient name="apparelNightvisionGoggles" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+		</recipe>
+
+
+		<!-- Lucky Master Nightvision Googles -->
+		<recipe name="NodapparelConvenientGlassesMasterNightvision" count="1">
+			<ingredient name="NodapparelConvenientGlassesPerception" count="1"/>
+			<ingredient name="NodapparelConvenientGlassesFortitude" count="1"/>
+			<ingredient name="NodapparelConvenientGlassesAgility" count="1"/>
+			<ingredient name="NodapparelConvenientGlassesIntellect" count="1"/>
+			<ingredient name="NodapparelConvenientGlassesNightvision" count="1"/>
+		</recipe>
+
+
+		<!-- Lucky Legendary Master Nightvision Googles -->
+		<recipe name="NodapparelConvenientGlassesLegendaryMasterNightvision" count="1">
+			<ingredient name="NodapparelConvenientGlassesMasterNightvision" count="2"/>
+		</recipe>
+
+		<recipe name="NodapparelCombatShirt" count="1">
+			<ingredient name="resourceCloth" count="500"/>
+			<ingredient name="resourceMilitaryFiber" count="30"/>
+			<ingredient name="resourceForgedIron" count="30"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="armorMilitarySetParts" count="30"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodapparelCombatPants" count="1">
+			<ingredient name="resourceCloth" count="500"/>
+			<ingredient name="resourceMilitaryFiber" count="30"/>
+			<ingredient name="resourceForgedIron" count="30"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="armorMilitarySetParts" count="30"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodapparelOutlawBandana" count="1">
+			<ingredient name="resourceCloth" count="500"/>
+			<ingredient name="resourceMilitaryFiber" count="30"/>
+			<ingredient name="resourceForgedIron" count="30"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="armorMilitarySetParts" count="30"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodCombatStealthBoots" count="1">
+			<ingredient name="resourceCloth" count="500"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryGhillieSuitJacket" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>	
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryGhillieSuitPants" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodSteelTankBoots" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryGhillieSuitHood" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodCombatChestArmor" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodCombatGlovesArmor" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodCombatLegArmor" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodCombatHelmetArmor" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodSteelTankHelmetArmor" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodSteelTankChestArmor" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodSteelTankGlovesArmor" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodSteelTankLegsArmor" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryHazmatBoots" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryHazmatPants" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryHazmatJacket" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryHazmatGloves" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodLegendaryHazmatMask" count="1">
+			<ingredient name="armorSteelSetParts" count="50"/>
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceForgedSteel" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodOutlawDuster" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodOutlawBoots" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+		<recipe name="NodOutlawHat" count="1">
+			<ingredient name="armorMilitarySetParts" count="50"/>
+			<ingredient name="resourceMilitaryFiber" count="50"/>
+			<ingredient name="resourceYuccaFibers" count="100"/>
+			<ingredient name="resourceSewingKit" count="50"/>
+			<ingredient name="resourceSilverNugget" count="30"/>
+			<ingredient name="resourceGoldNugget" count="20"/>
+			<ingredient name="resourceRawDiamond" count="10"/>
+		</recipe>
+
+	</append>
+</configs>

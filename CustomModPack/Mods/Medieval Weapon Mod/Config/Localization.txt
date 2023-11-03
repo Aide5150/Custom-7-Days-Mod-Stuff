@@ -1,0 +1,24 @@
+
+Key,Source,Context,English
+meleeMedievalAxe1,items,Item,Battle Axe,,,,,
+meleeMedievalAxe1Desc,items,Item,"A medieval weapon of choice for taking off heads",,,,,
+
+Key,Source,Context,English
+meleeMedievalAxe2,items,Item,Executioners Axe,,,,,
+meleeMedievalAxe2Desc,items,Item,"An executioners axe, shortened for mobility and for clean cuts",,,,,
+
+Key,Source,Context,English
+meleeMedievalMace1,items,Item,Mace,,,,,
+meleeMedievalMace1Desc,items,Item,"A medieval weapon of choice for beating your enemies into submission",,,,,
+
+Key,Source,Context,English
+meleeMedievalSpear1,items,Item,War Spear,,,,,
+meleeMedievalSpear1Desc,items,Item,"With practise you will become unstoppable with this weapon",,,,,
+
+Key,Source,Context,English
+meleeMedievalKhopesh,items,Item,Scythe,,,,,
+meleeMedievalKhopeshDesc,items,Item,"a small scythe that makes up for it's size with deadly lacerations",,,,,
+
+Key,Source,Context,English
+meleeMedievalSword1,items,Item,Knight's Sword,,,,,
+meleeMedievalSword1Desc,items,Item,"a classic weapon of choice",,,,,
