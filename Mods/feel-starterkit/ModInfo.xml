@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Feel - Starter Kit" />
+		<Description value="Starter Kit Addon for feel-core" />
+		<Author value="Geoffrey Ruis" />
+		<Version value="1.8" />
+		<Website value="https://ruis.software/" />
+	</ModInfo>
+</xml>

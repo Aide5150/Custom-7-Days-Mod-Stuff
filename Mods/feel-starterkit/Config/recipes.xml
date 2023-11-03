@@ -1,0 +1,51 @@
+<configs>
+	<append xpath="/recipes" >		
+		<!-- BEGIN OF Characters -->
+		<recipe name="FeelCharacterHunter" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterBuilder" count="1">
+				<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterRifleman" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterVeteran" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterThief" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterGunman" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterMiner" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterSurvivor" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterMedic" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		 <recipe name="FeelCharacterMechanic" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterEngineer" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		 <recipe name="FeelCharacterFarmer" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>	
+		 <recipe name="FeelCharacterBrawler" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<recipe name="FeelCharacterLarper" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		 <recipe name="FeelCharacterAssassin" count="1">
+			<ingredient name="FeelChooseCharacter" count="1" />
+		</recipe>
+		<!-- END OF Characters -->
+	</append>
+</configs>
