@@ -1,7 +1,0 @@
-<config>
-
-<remove xpath="/lootcontainers/lootgroup[@name='drinks']/item[@name='drinkJarYuccaJuice']"/>
-<remove xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon']/item[@name='drinkJarYuccaJuice']"/>
-<remove xpath="/lootcontainers/lootgroup[@name='groupSodaFountain01']/item[@name='drinkJarYuccaJuice']"/>
-
-</config>
