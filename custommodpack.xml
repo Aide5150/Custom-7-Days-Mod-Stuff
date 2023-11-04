@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Servers>
-	<ServerGroup Name="Mod Group" Logo="" Description="I made cool mods!">
-		<Server Name="Mod-Stable" Logo="">
+	<ServerGroup Name="Alex's Custom" Logo="" Description="I made cool mods!">
+		<Server Name="Alex's Custom" Logo="">
 			<Description>
 This is my stable version!
 
@@ -11,7 +11,7 @@ It can be multiple lines
 			</Downloads>
 		</Server>
 		
-		<Server name="My mod -experimental" >
+		<Server name="Alex's Custom" >
 			<Description>This is my experimental version! Play at your own risk!</Description>
 			<DownloadMode>Clone</DownloadMode>
 			<Version>Latest</Version>
