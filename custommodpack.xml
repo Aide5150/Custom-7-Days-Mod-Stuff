@@ -7,10 +7,7 @@ This is my stable version!
 
 It can be multiple lines
 
-			</Description>
-			</Downloads>
-		</Server>
-		
+			</Description>		
 		<Server name="Alex's Custom" >
 			<Description>This is my experimental version! Play at your own risk!</Description>
 			<DownloadMode>Clone</DownloadMode>
