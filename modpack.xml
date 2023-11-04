@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Servers>
+	<ServerGroup Name="Alex's Custom" Logo="" Description="I made cool mods!">
+		<Server name="Alex's Custom" >
+			<Description>This is my experimental version! Play at your own risk!</Description>
+			<DownloadMode>Clone</DownloadMode>
+			<Version>Latest</Version>
+			<EAC>Disabled</EAC>
+			<ReleaseNotes></ReleaseNotes>
+			<Downloads>
+			<Download>https://github.com/Aide5150/Custom-7-Days-Mod-Stuff</Download>
+			</Downloads>
+		</Server>
+	</ServerGroup>
+</Servers>
