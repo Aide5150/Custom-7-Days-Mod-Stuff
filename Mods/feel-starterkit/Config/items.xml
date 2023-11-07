@@ -70,7 +70,7 @@
 			<property name="DescriptionKey" value="FeelCharacterGunmanDesc" />
 			<property class="Action0">
 			<property name="Create_item" value="qt_stephan, gunHandgunT2Magnum44, ammo44MagnumBulletBall, handgunsSkillMagazine, 
-			resourceRepairKit, bookEnforcerDamage, bookEnforcerIntimidation, bookEnforcerCriminalPursuit, bookEnforcerApparel,	suitJacket, suitPants, dressShoes, shades" />
+			resourceRepairKit, bookEnforcerDamage, bookEnforcerIntimidation, bookEnforcerCriminalPursuit, bookEnforcerApparel, suitJacket, suitPants, dressShoes, shades" />
 			<property name="Create_item_count" value="1, 1, 200, 20, 5, 1, 1, 1, 1, 1, 1, 1, 1" />
 			</property>
 		</item>
