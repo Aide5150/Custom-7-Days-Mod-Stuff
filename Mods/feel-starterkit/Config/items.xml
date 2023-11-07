@@ -100,7 +100,7 @@
 			<property name="CustomIcon" value="CharacterMedic" />
 			<property name="DescriptionKey" value="FeelCharacterMedicDesc" />
 			<property class="Action0">
-			<property name="Create_item" value="qt_claude, meleeWpnBatonT2StunBaton, bookTechJunkie5Repulsor, resourceRepairKit, medicalSKillMagazine, medicalFirstAidBandage, drugPainkillers, drugAntibiotics, medicalFirstAidKit, toolBeaker" />
+			<property name="Create_item" value="qt_claude, meleeWpnBatonT2StunBaton, bookTechJunkie5Repulsor, resourceRepairKit, medicalSkillMagazine, medicalFirstAidBandage, drugPainkillers, drugAntibiotics, medicalFirstAidKit, toolBeaker" />
 			<property name="Create_item_count" value="1, 1, 1, 5, 5, 25, 5, 5, 5, 5, 1" />
 			</property>
 		</item>
