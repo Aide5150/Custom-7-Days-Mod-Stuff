@@ -131,7 +131,7 @@
 			<property name="DescriptionKey" value="FeelCharacterFarmerDesc" />
 			<property class="Action0">
 			<property name="Create_item" value="qt_sarah, seedSkillMagazine, foodSkillMagazine, questRewardFarmT1Bundle, questRewardFarmT2Bundle, questRewardFarmT3Bundle, gunShotgunT1DoubleBarrel, ammoShotgunShell, resourceRepairKit, meleeToolShovelT1IronShovel" />
-			<property name="Create_item_count" value="1, 20, 20, 1, 1, 1, 150, 5, 1" />
+			<property name="Create_item_count" value="1, 20, 20, 1, 1, 1, 1, 150, 5, 1" />
 			</property>
 		</item>
 		<item name="FeelCharacterAssassin">
