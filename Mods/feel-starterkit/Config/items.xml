@@ -49,7 +49,7 @@
 			<property name="CustomIcon" value="CharacterVeteran" />
 			<property name="DescriptionKey" value="FeelCharacterVeteranDesc" />
 			<property class="Action0">
-			<property name="Create_item" value="qt_nickole, gunHandgunT1Pistol, ammo9mmBulletBall, resourceRepairKit, meleeWpnBladeT2Machete, handgunsSkillMagazine, explosivesSkillMagazine, bookUrbanCombatLanding, bookUrbanCombatCigar, bookUrbanCombatSneaking, bookUrbanCombatJumping, bookUrbanCombatLandMines, bookUrbanCombatAdrenalineRush, bookUrbanCombatRoomClearing, machineGunsSkillMagazine, riflesSkillMagazine" />
+			<property name="Create_item" value="qt_nickole, gunHandgunT1Pistol, ammo9mmBulletBall, resourceRepairKit, meleeWpnBladeT3Machete, handgunsSkillMagazine, explosivesSkillMagazine, bookUrbanCombatLanding, bookUrbanCombatCigar, bookUrbanCombatSneaking, bookUrbanCombatJumping, bookUrbanCombatLandMines, bookUrbanCombatAdrenalineRush, bookUrbanCombatRoomClearing, machineGunsSkillMagazine, riflesSkillMagazine" />
 			<property name="Create_item_count" value="1, 1, 300, 5, 1, 20, 20, 1, 1, 1, 1, 1, 1, 1, 20, 20" />
 			</property>
 		</item>
@@ -59,7 +59,7 @@
 			<property name="CustomIcon" value="CharacterThief" />
 			<property name="DescriptionKey" value="FeelCharacterThiefDesc" />
 			<property class="Action0">
-			<property name="Create_item" value="qt_stephan, gunHandgunT1Pistol, ammo9mmBulletBall, meleeWpnBladeT2Machete, resourceRepairKit, casinoCoin, resourceLockPick, aviatorGoggles, bookLuckyLooterDukes, bookGreatHeistGems, bookGreatHeistGoldRush, bookGreatHeistSprintSneak, bookGreatHeistSafes, meleeToolPickT1IronPickaxe" />
+			<property name="Create_item" value="qt_stephan, gunHandgunT1Pistol, ammo9mmBulletBall, meleeWpnBladeT3Machete, resourceRepairKit, casinoCoin, resourceLockPick, aviatorGoggles, bookLuckyLooterDukes, bookGreatHeistGems, bookGreatHeistGoldRush, bookGreatHeistSprintSneak, bookGreatHeistSafes, meleeToolPickT1IronPickaxe" />
 			<property name="Create_item_count" value="1, 1, 300, 1, 5, 1000, 50, 1, 1, 1, 1, 1, 1, 1" />
 			</property>
 		</item>
@@ -70,7 +70,7 @@
 			<property name="DescriptionKey" value="FeelCharacterGunmanDesc" />
 			<property class="Action0">
 			<property name="Create_item" value="qt_stephan, gunHandgunT2Magnum44, ammo44MagnumBulletBall, handgunsSkillMagazine, 
-			resourceRepairKit, bookEnforcerDamage, bookEnforcerIntimidation, bookEnforcerCriminalPursuit, bookEnforcerApparel, 	suitJacket, suitPants, dressShoes, shades" />
+			resourceRepairKit, bookEnforcerDamage, bookEnforcerIntimidation, bookEnforcerCriminalPursuit, bookEnforcerApparel,	suitJacket, suitPants, dressShoes, shades" />
 			<property name="Create_item_count" value="1, 1, 200, 20, 5, 1, 1, 1, 1, 1, 1, 1, 1" />
 			</property>
 		</item>
@@ -91,7 +91,7 @@
 			<property name="DescriptionKey" value="FeelCharacterSurvivorDesc" />
 			<property class="Action0">
 			<property name="Create_item" value="qt_jennifer, bladesSkillMagazine, spearsSkillMagazine, bowsSkillMagazine, salvageToolsSkillMagazine, resourceRepairKit, toolCookingPot, toolCookingGrill, meleeWpnBladeT1HuntingKnife, gunBowT1WoodenBow, ammowArrowIron, gunBowT1IronCrossbow, ammoCrossbowBoltIron, bookWasteTreasuresSinks, bookWasteTreasuresCloth, bookWasteTreasuresDoors, bookWasteTreasuresWater, bookWasteTreasuresAcid, bookWasteTreasuresCoffins, bookWasteTreasuresHoney, meleeWpnSpearT1IronSpear" />
-			<property name="Create_item_count" value="1, 20, 20, 20, 20, 5, 1, 1, 1, 100, 1, 100, 1, 1, 1, 1, 1, 1, 1, 1" />
+			<property name="Create_item_count" value="1, 20, 20, 20, 20, 5, 1, 1, 1, 1, 100, 1, 100, 1, 1, 1, 1, 1, 1, 1, 1" />
 			</property>
 		</item>
 		<item name="FeelCharacterMedic">
@@ -140,7 +140,7 @@
 			<property name="CustomIcon" value="CharacterAssassin" />
 			<property name="DescriptionKey" value="FeelCharacterAssassinDesc" />
 			<property class="Action0">
-			<property name="Create_item" value="qt_taylor, apparelNightvisionGoggles, meleeWpnBladeT1HuntingKnife, gunRifleT1HuntingRifle, ammo762mmBulletBall, gunBowT1IronCrossbow, ammoCrossbowBoltIron, bookNightStalkerStealthDamage, bookNightStalkerSilentNight, bookNightStalkerBlades, bookNightStalkerThiefAdrenaline, bookNightStalkerArchery, bookNightStalkerTwilightThief, , bookNightStalkerSlumberParty, bookHuntingJournalSelfDefense, resourceRepairKit, bookUrbanCombatSneaking, bookUrbanCombatJumping" />
+			<property name="Create_item" value="qt_taylor, apparelNightvisionGoggles, meleeWpnBladeT1HuntingKnife, gunRifleT1HuntingRifle, ammo762mmBulletBall, gunBowT1IronCrossbow, ammoCrossbowBoltIron, bookNightStalkerStealthDamage, bookNightStalkerSilentNight, bookNightStalkerBlades, bookNightStalkerThiefAdrenaline, bookNightStalkerArchery, bookNightStalkerTwilightThief, bookNightStalkerSlumberParty, bookHuntingJournalSelfDefense, resourceRepairKit, bookUrbanCombatSneaking, bookUrbanCombatJumping" />
 			<property name="Create_item_count" value="1, 1, 1, 1, 150, 1, 100, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1" />
 			</property>
 		</item>
