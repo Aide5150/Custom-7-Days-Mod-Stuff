@@ -1,0 +1,26 @@
+<configs>
+	
+	<!--Allows using these resources to upgrade-->
+	<append xpath="/items/item/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceYuccaFibers</append>
+	
+	<append xpath="/items/item/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceSteelPolish</append>
+	
+	<!--Adds Steel Polish as a resource-->
+	<append xpath="/items">
+		<item name="resourceSteelPolish">
+			<properly name="Extends" value="resourceLockPick"/>
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceSteelPolish"/>
+			<property name="DescriptionKey" value="resourceSteelPolishDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceForgedSteel"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="200"/>
+			<property name="EconomicValue" value="80000"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="Group" value="Resources,Chemicals"/>
+		</item>
+	</append>
+	
+</configs>

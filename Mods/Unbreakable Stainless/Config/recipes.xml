@@ -1,0 +1,11 @@
+<configs>
+	
+	<!--Allows crafting Steel Polish-->
+	<append xpath="/recipes">
+		<recipe name="resourceSteelPolish" count="10" craft_area="chemistryStation" tags="chemistryStation" craft_time="60">
+			<ingredient name="resourceOil" count="10"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+		</recipe>
+	</append>
+	
+</configs>
