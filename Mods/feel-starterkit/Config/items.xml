@@ -89,7 +89,7 @@
 			<property name="CustomIcon" value="CharacterSurvivor" />
 			<property name="DescriptionKey" value="FeelCharacterSurvivorDesc" />
 			<property class="Action0">
-			<property name="Create_item" value="qt_jennifer, bladesSkillMagazine, spearsSkillMagazine, bowsSkillMagazine, salvageToolsSkillMagazine, resourceRepairKit, toolCookingPot, toolCookingGrill, meleeWpnBladeT1HuntingKnife, gunBowT1WoodenBow, ammowArrowIron, gunBowT1IronCrossbow, ammoCrossbowBoltIron, bookWasteTreasuresSinks, bookWasteTreasuresCloth, bookWasteTreasuresDoors, bookWasteTreasuresWater, bookWasteTreasuresAcid, bookWasteTreasuresCoffins, bookWasteTreasuresHoney, meleeWpnSpearT1IronSpear" />
+			<property name="Create_item" value="qt_jennifer, bladesSkillMagazine, spearsSkillMagazine, bowsSkillMagazine, salvageToolsSkillMagazine, resourceRepairKit, toolCookingPot, toolCookingGrill, meleeWpnBladeT1HuntingKnife, gunBowT1WoodenBow, ammoArrowIron, gunBowT1IronCrossbow, ammoCrossbowBoltIron, bookWasteTreasuresSinks, bookWasteTreasuresCloth, bookWasteTreasuresDoors, bookWasteTreasuresWater, bookWasteTreasuresAcid, bookWasteTreasuresCoffins, bookWasteTreasuresHoney, meleeWpnSpearT1IronSpear" />
 			<property name="Create_item_count" value="1, 20, 20, 20, 20, 5, 1, 1, 1, 1, 100, 1, 100, 1, 1, 1, 1, 1, 1, 1, 1" />
 			</property>
 		</item>
