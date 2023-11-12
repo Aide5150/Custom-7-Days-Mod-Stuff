@@ -159,7 +159,7 @@
 			<property name="CustomIcon" value="CharacterLarper" />
 			<property name="DescriptionKey" value="FeelCharacterLarperDesc" />
 			<property class="Action0">
-			<property name="Create_item" value="qt_taylor, questRewardT0HeavyArmorBundle, modArmorImprovedFittingsSchematic, modArmorPlatingBasicSchematic, bladesSkillMagazine, resourceRepairKit, armorSkillMagazine, Claymore" />
+			<property name="Create_item" value="qt_taylor, questRewardT0HeavyArmorBundle, modArmorImprovedFittingsSchematic, modArmorPlatingBasicSchematic, bladesSkillMagazine, resourceRepairKit, armorSkillMagazine, meleeMedievalSword1" />
 			<property name="Create_item_count" value="1, 1, 1, 1, 20, 5, 20, 1" />
 			</property>
 		</item>
