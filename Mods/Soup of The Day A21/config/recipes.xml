@@ -1,0 +1,169 @@
+<modpreppers>
+
+	<append xpath="recipes">
+
+<recipe name="Beef Broth Vegetable Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Beef Stew Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Butternut Squash Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCropPumpkin" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Cauliflower Chowder Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Cauliflower Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Chicken Noodle Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodRawMeat" count="1"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Chili Mac Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanChili" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Chili Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanChili" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Dumpling Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Lasagna Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanChili" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Mixed Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Oxtail Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Pot Matzo Ball Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Pot Taco Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanChili" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Potato Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Sancocho Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanChili" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Sausage Beef Chili Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodCanBeef" count="1"/>
+	<ingredient name="foodCanChili" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Seafood Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCanSalmon" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Seaweed Egg Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodEgg" count="2"/>
+	<ingredient name="foodCanSalmon" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Shrimp Barley Lemon Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodCanSalmon" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Tomato Egg Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+	<ingredient name="foodEgg" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="Turkey Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
+  <ingredient name="foodRawMeat" count="1"/>
+	<ingredient name="foodCropPotato" count="2"/>
+	<ingredient name="foodCropCorn" count="2"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+	</append>  
+
+
+</modpreppers>

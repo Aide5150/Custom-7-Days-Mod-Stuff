@@ -1,0 +1,3 @@
+Key,English
+resourceSteelPolish,"Steel Polish"
+resourceSteelPolishDesc,"This special polish will greatly strengthen your steel and make it shine brilliantly!"
