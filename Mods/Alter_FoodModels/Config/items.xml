@@ -1,0 +1,109 @@
+<configs>
+	<append xpath="/items/item[@name='drugAtomJunkies']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugAtomJunkies"/>
+	</append>
+	<append xpath="/items/item[@name='drugCovertCats']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugCovertCats"/>
+	</append>
+	<append xpath="/items/item[@name='drugEyeKandy']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugEyeKandy"/>
+	</append>
+	<append xpath="/items/item[@name='drugFortBites']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugFortBites"/>
+	</append>
+	<append xpath="/items/item[@name='drugHackers']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugHackers"/>
+	</append>
+	<append xpath="/items/item[@name='drugHealthBar']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugHealthBar"/>
+	</append>
+	<append xpath="/items/item[@name='drugJailBreakers']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugJailBreakers"/>
+	</append>
+	<append xpath="/items/item[@name='drugNerdTats']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugNerdTats"/>
+	</append>
+	<append xpath="/items/item[@name='drugOhShitzDrops']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugOhShitzDrops"/>
+	</append>
+	<append xpath="/items/item[@name='drugRockBusters']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugRockBusters"/>
+	</append>
+	<append xpath="/items/item[@name='drugSkullCrushers']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugSkullCrushers"/>
+	</append>
+	<append xpath="/items/item[@name='drugSugarButts']">
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drugSugarButts"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanChili']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanChili"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanLamb']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanLamb"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanSoup']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanSoup"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanStock']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanStock"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanPasta']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanPasta"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanBeef']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanBeef"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanChicken']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanChicken"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanMiso']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanMiso"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanPeas']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanPeas"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanTuna']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanTuna"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanPears']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanPears"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanCatfood']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanCatfood"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanDogfood']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?foodCanDogfood"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanSham']">
+		<property name="HoldType" value="31"/>
+		<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+	</append>
+	<append xpath="/items/item[@name='foodCanSalmon']">
+		<property name="HoldType" value="31"/>
+		<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+	</append>
+	<append xpath="/items/item[@name='drinkJarBlackStrapCoffee']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drinkJarBlackStrapCoffee"/>
+	</append>
+	<append xpath="/items/item[@name='drinkCanMegaCrush']">
+		<property name="HoldType" value="14"/>
+		<property name="Meshfile" value="#@modfolder:Resources/resources.unity3d?drinkCanMegaCrush"/>
+	</append>
+	<append xpath="/items/item[@name='drinkCanMegaCrush']/property[@class='Action0']">
+		<property name="Sound_start" value="player_drinking_can"/>
+	</append>
+</configs>

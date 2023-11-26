@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>
+  <!-- Add new loot group-->
+  <insertAfter xpath="/lootcontainers/lootgroup[@name='groupBookPile01']">
+    <lootgroup name="VaybensBookGroup">
+        <item group="skillMagazines" loot_prob_template="high" />
+        <item group="perkBooks" loot_prob_template="medLow" />
+    </lootgroup>
+    <lootgroup name="VaybenSchematicGroup">
+        <item group="schematicsModsAndGeneralCommon" loot_prob_template="high" />
+        <item group="schematicsVehiclesCommon" loot_prob_template="med" />
+        <item group="schematicsModsAndGeneralRare" loot_prob_template="low" />
+        <item group="schematicsVehiclesRare" loot_prob_template="veryLow" />
+    </lootgroup>
+	<lootgroup name="VaybensBookPiles"  count="all">
+      <item name="resourcePaper" count="1,3" />
+	  <item group="VaybensBookGroup" count="0,4" />
+	  <item group="VaybenSchematicGroup" count="0,1" loot_prob_template="veryLow" />
+	</lootgroup>
+  </insertAfter>
+  <!-- remove each loot container and replace with new one containing new loot group-->
+  <!-- bookpile-->
+  <remove xpath="/lootcontainers/lootcontainer[@name='bookPile']"></remove>
+  <insertAfter xpath="/lootcontainers/lootcontainer[@name='shoes']">
+    <lootcontainer name="bookPile" count="1" size="6,2" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="true" ignore_loot_abundance="true">
+	  <item group="VaybensBookPiles" />
+	  <item group="VaybensBookPiles" prob=".12" />
+    </lootcontainer>
+  </insertAfter>
+  <!-- bookcase-->
+  <remove xpath="/lootcontainers/lootcontainer[@name='bookcase']"></remove>
+  <insertAfter xpath="/lootcontainers/lootcontainer[@name='purse']">
+    <lootcontainer name="bookcase" count="1" size="6,2" sound_open="UseActions/open_drawer" sound_close="UseActions/close_drawer" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+	  <item group="VaybensBookPiles" />
+	  <item group="VaybensBookPiles" prob=".24" />
+	  <item group="VaybensBookPiles" prob=".12" />
+    </lootcontainer>
+  </insertAfter>
+  <!-- PObox-->
+  <remove xpath="/lootcontainers/lootcontainer[@name='PObox']"></remove>
+  <insertAfter xpath="/lootcontainers/lootcontainer[@name='mailbox']">
+      <lootcontainer name="PObox" count="1" size="6,2" sound_open="UseActions/open_mailbox" sound_close="UseActions/close_mailbox" loot_quality_template="qualBaseTemplate" destroy_on_close="empty" ignore_loot_abundance="true">
+        <item group="VaybensBookPiles" />
+      </lootcontainer>
+  </insertAfter>
+  <!-- crackabookCrate-->
+  <remove xpath="/lootcontainers/lootcontainer[@name='crackabookCrate']"></remove>
+  <insertAfter xpath="/lootcontainers/lootcontainer[@name='constructionCrate']">
+    <lootcontainer name="crackabookCrate" count="1" size="6,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+	  <item group="VaybensBookPiles" />
+	  <item group="VaybensBookPiles" prob=".24" />
+	  <item group="VaybensBookPiles" prob=".12" />
+    </lootcontainer>
+  </insertAfter>
+  <!-- crackabookShelves-->
+  <remove xpath="/lootcontainers/lootcontainer[@name='crackabookShelves']"></remove>
+  <insertAfter xpath="/lootcontainers/lootcontainer[@name='singleBooks']">
+    <lootcontainer name="crackabookShelves" count="1" size="6,2" sound_open="UseActions/open_garbage" sound_close="clothdestroy" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
+	  <item group="VaybensBookPiles" />
+	  <item group="VaybensBookPiles" prob=".12" />
+    </lootcontainer>
+  </insertAfter>
+</xml>

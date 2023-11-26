@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="VaybensReasonableBookPiles"/>
+	<Description value="Turns Book Piles, Bookcases, CrackaBook Crates, and POboxes into containers with a reasonable amount of books.  This actually works."/>
+	<DisplayName value="Vayben's Reasonable Book Piles"/>
+	<Author value="Vayben"/>
+	<Version value="1.0"/>
+</xml>
